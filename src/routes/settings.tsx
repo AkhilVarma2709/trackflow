@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DashboardShell } from "@/components/trackflow/DashboardShell";
 import { PrimaryButton } from "@/components/trackflow/Buttons";
 import { requireAuth } from "@/lib/supabase";
+import { useAuth } from "@/hooks/useAuth";
 
 export const Route = createFileRoute("/settings")({
   beforeLoad: requireAuth,
@@ -27,12 +28,16 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
 }
 
 function SettingsPage() {
+  const { user } = useAuth();
+  const email = user?.email ?? "";
+  const displayName = email ? email.split("@")[0] : "";
+
   return (
     <DashboardShell title="Settings" subtitle="Manage your account.">
       <div className="space-y-5">
         <Card title="Account">
-          <Field label="Full name" value="Jane Doe" />
-          <Field label="Email" type="email" value="jane@trackflow.io" />
+          <Field label="Full name" value={displayName} />
+          <Field label="Email" type="email" value={email} />
           <PrimaryButton>Save changes</PrimaryButton>
         </Card>
         <Card title="Security">

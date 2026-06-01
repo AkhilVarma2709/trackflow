@@ -20,15 +20,21 @@ const items: Item[] = [
 ];
 
 function getInitials(email?: string) {
-  if (!email) return "JD";
+  if (!email) return "U";
   return email.slice(0, 2).toUpperCase();
+}
+
+function getDisplayName(email?: string) {
+  if (!email) return "User";
+  return email.split("@")[0];
 }
 
 export function Sidebar() {
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const email = user?.email ?? "jane@trackflow.io";
+  const email = user?.email ?? "";
+  const displayName = getDisplayName(user?.email);
   const initials = getInitials(user?.email);
   const activeIndex = (() => {
     // priority: deeper path > Companies (on /dashboard/companies/*) > Dashboard (exact /dashboard)
@@ -106,7 +112,7 @@ export function Sidebar() {
             <button className="p-4 border-t border-border flex items-center gap-3 text-left">
               <div className="h-8 w-8 rounded-full bg-charcoal text-primary-foreground grid place-items-center text-xs font-medium">{initials}</div>
               <div className="min-w-0 text-sm">
-                <div className="text-charcoal leading-tight">Jane Doe</div>
+                <div className="truncate text-charcoal leading-tight">{displayName}</div>
                 <div className="truncate text-muted-foreground text-xs">{email}</div>
               </div>
             </button>

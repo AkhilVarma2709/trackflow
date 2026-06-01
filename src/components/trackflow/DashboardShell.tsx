@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 function getInitials(email?: string) {
-  if (!email) return "JD";
+  if (!email) return "U";
   return email.slice(0, 2).toUpperCase();
 }
 

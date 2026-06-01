@@ -47,7 +47,7 @@ function SignupPage() {
         <h1 className="mt-7 text-2xl font-medium text-charcoal text-center">Create your account</h1>
         <form onSubmit={handleSubmit} className="mt-7 space-y-4">
           {[
-            { l: "Full name", n: "fullName", t: "text", p: "Jane Doe" },
+            { l: "Full name", n: "fullName", t: "text", p: "Your name" },
             { l: "Email", n: "email", t: "email", p: "you@company.com" },
             { l: "Password", n: "password", t: "password", p: "••••••••" },
           ].map((f) => (
