@@ -203,7 +203,6 @@ function Landing() {
             Connect on LinkedIn →
           </a>
         </div>
-        <p className="mt-5 text-sm text-muted-foreground">Portfolio: akhilvarma-potfolio.vercel.app</p>
       </Section>
 
       {/* CTA Banner */}
@@ -228,7 +227,6 @@ function Landing() {
             <ul className="space-y-2">
               <li><a className="text-muted-foreground hover:text-charcoal" href="https://github.com/AkhilVarma2709/trackflow" target="_blank" rel="noreferrer">GitHub: github.com/AkhilVarma2709/trackflow</a></li>
               <li><a className="text-muted-foreground hover:text-charcoal" href="https://linkedin.com/in/akhilvarmavegesna" target="_blank" rel="noreferrer">LinkedIn: linkedin.com/in/akhilvarmavegesna</a></li>
-              <li><a className="text-muted-foreground hover:text-charcoal" href="https://akhilvarma-potfolio.vercel.app" target="_blank" rel="noreferrer">Portfolio: akhilvarma-potfolio.vercel.app</a></li>
               <li><a className="text-muted-foreground hover:text-charcoal" href="mailto:akhilvarma270908@gmail.com">Email: akhilvarma270908@gmail.com</a></li>
             </ul>
           </div>
